@@ -109,16 +109,25 @@ public class Day6 {
         boolean isTwoDigit = true;
         int count = 0;
 
+public static boolean isTwoDigit(StringBuilder password){
+        //method for Q3
+        //count if there is at least two digit
+        boolean isTwoDigit = false;
+        int count = 0;
+
         for(int i = 0; i<password.length(); i++){
 
             char temp = password.charAt(i);
-            isTwoDigit = 0<count;
 
             if(Character.isDigit(temp)){
                 count++;
+                if(count>1) {
+                    isTwoDigit = true;
+                    break;
+                }
             }
-
         }
+
         return isTwoDigit;
     }
 
@@ -127,7 +136,7 @@ public class Day6 {
         //see if the given password only digits
         boolean digitOnly = true;
 
-        for (int i =0; i<password.length(); i++){
+        for (int i = 0; i<password.length(); i++){
             char temp = password.charAt(i);
 
             if(!Character.isDigit(temp)){
